@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class THREE : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int COUNTER;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //If the player press A, call counter 
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            counter();
+        }
+    }
+
+    private void counter()
+    {
+        //sum one to the counter and check if it's equal to 10,
+        //if it is the case, Game over
+        COUNTER++;
+
+        if (COUNTER == 10)
+        {
+            Debug.Log("GAME OVER");
+        }
     }
 }
