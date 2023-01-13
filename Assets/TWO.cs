@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class TWO : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string username;
+    public string password;
+
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Login(username, password) == false)
+            {
+                Debug.Log($"FALSE; The username or the password is not correct");
+            }
+            else
+            {
+                Debug.Log($"TRUE; The username or the password is correct");
+            }
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool Login(string Username, string Password)
     {
-        
+        //if the text in the variables is equal to user = admin and
+        //pasword = abccba it will be true
+        if (Username == "admin" && Password == "abccba")
+        {
+            return true;
+        }
+            return false;
     }
 }
